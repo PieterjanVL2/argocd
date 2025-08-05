@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: myapp
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: myapp
@@ -16,6 +16,6 @@ spec:
       - name: myapp
         image: hashicorp/http-echo
         args:
-        - "-text=Welcome to your Kubernetes cluster running with ArgoCD"
+        - "-text=Welcome to your Kubernetes cluster running with ArgoCD, next step is learning rbac in kubernetes"
         ports:
         - containerPort: 5678
