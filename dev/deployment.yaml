@@ -16,6 +16,6 @@ spec:
       - name: myapp
         image: hashicorp/http-echo
         args:
-        - "-text=Welcome to your Kubernetes cluster running with ArgoCD, next step is learning rbac in kubernetes"
+        - "-text=Welcome to your Kubernetes cluster 🚀, running with ArgoCD 🐙"
         ports:
         - containerPort: 5678
