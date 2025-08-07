@@ -22,7 +22,7 @@ spec:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
-        {{- if .Values.app.args }}
+        {{- if .Values.image.args }}
           args:
             - "{{ .Values.image.args }}"
           {{- end }}
