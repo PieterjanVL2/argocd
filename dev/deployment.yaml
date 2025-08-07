@@ -16,6 +16,6 @@ spec:
       - name: myapp
         image: hashicorp/http-echo
         args:
-        - "-text=Welcome to your Kubernetes cluster 🚀, running with ArgoCD 🐙"
+        - "-text=Welcome to your Kubernetes cluster 🚀, running with ArgoCD 🐙, next step is to deploy it with HELM ⎈"
         ports:
         - containerPort: 5678
