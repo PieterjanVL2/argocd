@@ -23,9 +23,9 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         {{- if .Values.image.args }}
-          args:
-            - "{{ .Values.image.args }}"
-          {{- end }}
+        args:
+        {{ toYaml .Values.image.args | indent 10 }}
+        {{- end }}
         ports:
           - containerPort: {{ .Values.service.targetPort }}
         resources:
