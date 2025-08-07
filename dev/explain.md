@@ -1,1 +1,0 @@
-# This is my first Argo CD deployment

@@ -1,0 +1,23 @@
+replicaCount: 2
+
+image:
+  repository: hashicorp/http-echo
+  tag: latest
+  pullPolicy: Always
+  args:
+  - "-text=Welcome to your Kubernetes cluster 🚀, running with ArgoCD 🐙, next step is to deploy it with HELM ⎈"
+
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 5678
+  nodePort: 30090
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 256Mi
+  requests:
+    cpu: 250m
+    memory: 128Mi
