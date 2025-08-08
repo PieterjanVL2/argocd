@@ -9,3 +9,38 @@ dependencies:
   - name: postgresql
     version: 16.7.21      # The version of the official PostgresSQL Helm chart
     repository: oci://registry-1.docker.io/bitnamicharts
+
+
+  persistence:
+    ## @param primary.persistence.enabled Enable PostgreSQL Primary data persistence using PVC
+    ##
+    enabled: true
+    ## @param primary.persistence.volumeName Name to assign the volume
+    ##
+    volumeName: "data"
+    ## @param primary.persistence.existingClaim Name of an existing PVC to use
+    ##
+    existingClaim: ""
+    ## @param primary.persistence.mountPath The path the volume will be mounted at
+    ## Note: useful when using custom PostgreSQL images
+    ##
+    mountPath: /bitnami/postgresql
+    ## @param primary.persistence.subPath The subdirectory of the volume to mount to
+    ## Useful in dev environments and one PV for multiple services
+    ##
+    subPath: ""
+    ## @param primary.persistence.storageClass PVC Storage Class for PostgreSQL Primary data volume
+    ## If defined, storageClassName: <storageClass>
+    ## If set to "-", storageClassName: "", which disables dynamic provisioning
+    ## If undefined (the default) or set to null, no storageClassName spec is
+    ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+    ##   GKE, AWS & OpenStack)
+    ##
+    storageClass: ""
+    ## @param primary.persistence.accessModes PVC Access Mode for PostgreSQL volume
+    ##
+    accessModes:
+      - ReadWriteOnce
+    ## @param primary.persistence.size PVC Storage Request for PostgreSQL volume
+    ##
+    size: 8Gi

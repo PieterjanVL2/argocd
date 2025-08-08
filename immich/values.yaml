@@ -1,0 +1,8 @@
+postgresql:
+  enabled: false
+  global:
+    postgresql:
+      auth:
+        username: postgres
+        database: postgres
+        password: example
