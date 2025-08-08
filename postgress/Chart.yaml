@@ -1,0 +1,11 @@
+apiVersion: v2
+name: postgress-sql
+description: PostgresSQL database for immich
+type: application
+version: 0.1.0          # Your chart version (increment when you change this wrapper)
+appVersion: 17.5.0     # The Immich app version you're deploying
+
+dependencies:
+  - name: postgresql
+    version: 16.7.21      # The version of the official PostgresSQL Helm chart
+    repository: oci://registry-1.docker.io/bitnamicharts
